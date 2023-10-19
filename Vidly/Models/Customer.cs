@@ -9,6 +9,9 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsSubscribedToNewsletter { get; set; }
+        public MembershipType MembershipType { get; set; }
+        public byte MembershipTypeId { get; set; }
         //public string Address { get; set; }
         //public string City { get; set; }
         //public string Region { get; set; }
