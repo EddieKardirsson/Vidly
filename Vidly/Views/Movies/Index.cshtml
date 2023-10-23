@@ -6,18 +6,23 @@
 }
 
 <h2>Movies</h2>
+<p>
+	@Html.ActionLink("New Movie", "New", "Movies", new { @class = "btn btn-primary" })
+</p>
+@*<button type="submit" class="btn btn-primary">New Movie</button>*@
 <table class="table table-bordered table-hover">
-	<thead>
-		<tr>
-			<th>Movie</th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var movie in Model)
-		{
-			<tr>
-				<td>@Html.ActionLink(movie.Name, "Details", "Movies", new {id = movie.Id}, null)</td>
-			</tr>
-		}
-	</tbody>
+    <thead>
+        <tr>
+            <th>Movie</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+	            <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { id = movie.Id }, null)</td>
+	            <td>@movie.Genre.Name</td>
+            </tr>
+        }
+    </tbody>
 </table>
